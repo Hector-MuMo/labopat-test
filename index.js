@@ -1,4 +1,4 @@
-import { startServer, connectMongoDB } from "./server/index.js";
+import { startServer, connectMongoDB } from "./api/index.js";
 
 connectMongoDB();
 startServer();

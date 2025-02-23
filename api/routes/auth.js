@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import { config } from "../../config/env.js";
+import { config } from "../config/env.js";
 import { comparePassword, hashPassword } from "../../utils/bcryptHelpers.js";
 import users from "../../users.js";
 

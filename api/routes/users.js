@@ -1,6 +1,5 @@
 import express from "express";
-import { hashPassword } from "../../utils/bcryptHelpers.js";
-import { authenticateToken } from "../../middleware/middleware.js";
+import { authenticateToken } from "../middleware/middleware.js";
 
 const router = express.Router();
 
