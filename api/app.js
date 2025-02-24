@@ -1,14 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
-import usersRouter from "./routes/users.js";
-import tasksRouter from "./routes/tasks.js";
-import authRouter from "./routes/auth.js";
+import usersRouter from "./users/routes/index.js";
+import tasksRouter from "./tasks/routes/index.js";
+import authRouter from "./auth/routes/index.js";
 import { config } from "./config/env.js";
 
 const app = express();
 
 app.use(express.json());
-
 
 const connectMongoDB = async () => {
   try {
@@ -21,11 +20,6 @@ const connectMongoDB = async () => {
   }
 }
 
-
-app.use('/api', usersRouter);
-app.use('/api', tasksRouter);
-app.use('/api/auth/', authRouter);
-
 app.get("/", (req, res) => {
   res.send("Hello World!");
 })
@@ -36,6 +30,12 @@ const startServer = () => {
     console.log('Server is running at port: ' + PORT + '🚀​');
   })
 }
+
+//Routes
+app.use('/api', usersRouter);
+app.use('/api', tasksRouter);
+app.use('/api/auth', authRouter);
+
 
 export {
   startServer,
