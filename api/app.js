@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 })
 
 const startServer = () => {
-  const PORT = 3000;
+  const PORT = config.port;
   app.listen(PORT, () => {
     console.log('Server is running at port: ' + PORT + '🚀​');
   })
